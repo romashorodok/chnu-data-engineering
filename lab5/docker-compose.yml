@@ -46,7 +46,19 @@ services:
       KAFKA_DEFAULT_REPLICATION_FACTOR: 1
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
       KAFKA_NUM_PARTITIONS: 1
-      
+
+  kafka-ui:
+    container_name: kafka-ui
+    image: provectuslabs/kafka-ui:v0.7.2
+    ports:
+      - 8086:8080
+    depends_on:
+      - broker-1
+    environment:
+      KAFKA_CLUSTERS_0_NAME: broker-1
+      KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: broker-1:29091
+      DYNAMIC_CONFIG_ENABLED: true
+
   # broker-2:
   #   platform: linux/amd64
   #   image: confluentinc/cp-kafka:7.9.0
