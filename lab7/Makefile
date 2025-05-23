@@ -1,0 +1,2 @@
+run:
+	astro dev start
