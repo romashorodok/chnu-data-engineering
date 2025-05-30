@@ -1,0 +1,21 @@
+[project]
+name = "lab6"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "romashorodok",email = "108732029+romashorodok@users.noreply.github.com"}
+]
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "kafka-python (>=2.2.10,<3.0.0)",
+    "minio (>=7.2.15,<8.0.0)"
+]
+
+[tool.poetry]
+packages = [{include = "lab6", from = "src"}]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
